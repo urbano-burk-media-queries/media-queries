@@ -28,7 +28,7 @@ header {
     0% { text-shadow: 0 0 black; }
     25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
     50% { text-shadow: 0 0 black; }
-    75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
+    75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 #cc2e4b, -5px 0 black; }
     100% { text-shadow: 0 0 black; }
 }
 
@@ -52,6 +52,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    border-radius: 15px;
 }
 
 .image-container::before {
@@ -65,16 +66,6 @@ img {
     pointer-events: none;
 }
 
-.main {
-    padding: 20px;
-    height: auto;
-    width: 60%;
-}
-.sub-section{
-    padding: 20px;
-    height: auto;
-    width: 40%;
-}
 footer {
     background-color: #7a3030;
     color: #fff;
@@ -92,6 +83,12 @@ footer {
 @media screen and (max-width: 500px) {
     h1 {
         font-size: 24px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
     }
 
     nav ul {
@@ -143,6 +140,16 @@ footer {
     .sub-section .main{
         width: 400px;
         height: auto;
+    }
+    .main {
+        padding: 20px;
+        height: auto;
+        width: 60%;
+    }
+    .sub-section{
+        padding: 20px;
+        height: auto;
+        width: 40%;
     }
     .container {
         display: flex;
