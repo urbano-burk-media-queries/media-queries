@@ -1,9 +1,35 @@
 /* Default styles for all screens */
 body{
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-color: #7a3030;
+    /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 100vh;
+}
+header {
+    text-align: center;
+    /* Add any other styles you want for the header */
+}
+
+.header-content {
+    display: inline-block; /* Keeps the content centered */
+    animation-name: spin, depth, gradient;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+}
+
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+}
+
+@keyframes depth {
+    0% { text-shadow: 0 0 black; }
+    25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
+    50% { text-shadow: 0 0 black; }
+    75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
+    100% { text-shadow: 0 0 black; }
 }
 
 @keyframes gradient {
@@ -17,20 +43,40 @@ body{
         background-position: 0% 50%;
     }
 }
-
+.image-container {
+    position: relative;
+    display: inline-block;
+}
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(122, 48, 48, 0.7)); /* Adjust the colors as needed */
+    pointer-events: none;
 }
 
 .main {
     padding: 20px;
+    height: auto;
+    width: 60%;
 }
-
-
+.sub-section{
+    padding: 20px;
+    height: auto;
+    width: 40%;
+}
 footer {
-    background-color: #333;
+    background-color: #7a3030;
     color: #fff;
     text-align: center;
     padding: 10px;
